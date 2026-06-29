@@ -59,3 +59,9 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Mobile nav fallback — ensures hamburger shows even if Tailwind purges lg:hidden */
+@media (max-width: 1024px) {
+  .desktop-nav { display: none !important; }
+  .mobile-menu-btn { display: flex !important; }
+}

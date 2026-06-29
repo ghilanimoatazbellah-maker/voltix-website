@@ -78,7 +78,7 @@ export default function Navbar() {
         </a>
 
         {/* Links center (Desktop only) */}
-        <div className="hidden lg:flex items-center gap-8 font-medium text-textSecondary text-sm">
+        <div className="desktop-nav hidden lg:flex items-center gap-8 font-medium text-textSecondary text-sm">
           <a href="#" className="text-primary hover:underline underline-offset-4 decoration-2 decoration-primary transition-all">
             {t("nav.home")}
           </a>
@@ -104,10 +104,11 @@ export default function Navbar() {
           {/* Theme Toggle Button */}
           <button 
             onClick={toggleTheme}
+            suppressHydrationWarning
             className="w-12 h-12 rounded-lg glass border border-borderColor flex items-center justify-center text-textPrimary hover:text-primary transition-colors active:scale-95"
             aria-label="Toggle Theme"
           >
-            <span className="material-symbols-outlined text-xl">
+            <span className="material-symbols-outlined text-xl" suppressHydrationWarning>
               {theme === "dark" ? "light_mode" : "dark_mode"}
             </span>
           </button>
@@ -133,10 +134,11 @@ export default function Navbar() {
         {/* Hamburger Menu Button (Mobile only) */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="lg:hidden w-12 h-12 rounded-lg glass border border-borderColor flex items-center justify-center text-textPrimary hover:text-primary transition-colors active:scale-95"
+          suppressHydrationWarning
+          className="mobile-menu-btn lg:hidden w-12 h-12 rounded-lg glass border border-borderColor flex items-center justify-center text-textPrimary hover:text-primary transition-colors active:scale-95"
           aria-label="Toggle Menu"
         >
-          <span className="material-symbols-outlined text-2xl font-bold">
+          <span className="material-symbols-outlined text-2xl font-bold" suppressHydrationWarning>
             {menuOpen ? "close" : "menu"}
           </span>
         </button>
@@ -202,10 +204,11 @@ export default function Navbar() {
                   {/* Theme Toggle */}
                   <button 
                     onClick={toggleTheme}
+                    suppressHydrationWarning
                     className="w-12 h-12 rounded-lg glass border border-borderColor flex items-center justify-center text-textPrimary hover:text-primary transition-colors active:scale-95"
                     aria-label="Toggle Theme"
                   >
-                    <span className="material-symbols-outlined text-xl">
+                    <span className="material-symbols-outlined text-xl" suppressHydrationWarning>
                       {theme === "dark" ? "light_mode" : "dark_mode"}
                     </span>
                   </button>

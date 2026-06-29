@@ -83,5 +83,24 @@ All design tokens have been strictly followed:
 
 ## 🔧 Mobile Audit (2026-06-29)
 - **Viewport meta tag:** Added `<meta name="viewport" content="width=device-width, initial-scale=1" />` to `app/layout.tsx` to ensure correct mobile scaling.
-- **Fixed pixel widths:** Audited all components and `globals.css` — no hardcoded `width: Xpx` values found. All containers use Tailwind responsive utilities (`max-w-7xl`, `w-full`, `px-4`, etc.).
+- **Fixed pixel widths:** Audited all components and `globals.css` — no hardcoded `width: Xpx` values found. All containers use Tailwind responsive utilities (`max-w-7xl`, `w-full`, `px-4`, etc.)
 - **Status:** ✅ No horizontal overflow issues detected.
+
+## 🐛 Mobile Navbar Fix (2026-06-29)
+**Root cause:** Hydration mismatch from `theme` state (SSR=`"dark"`, client reads `localStorage`) causing React to inconsistently update the DOM on real devices. Also missing CSS safety net for hamburger visibility.
+
+**Fixes applied:**
+- **`Navbar.tsx`** — Added `suppressHydrationWarning` to all theme toggle buttons and their icon `<span>` elements. Added `desktop-nav` and `mobile-menu-btn` CSS classes as semantic fallback anchors.
+- **`tailwind.config.ts`** — Removed unused `./pages/**` path. Content array now strictly covers `./app/**` and `./components/**` to prevent any purge issues.
+- **`globals.css`** — Added explicit `@media (max-width: 1024px)` fallback: `.desktop-nav { display: none !important }` and `.mobile-menu-btn { display: flex !important }`. This guarantees hamburger visibility even if Tailwind class purging ever fails.
+
+**Build output (npm run build):**
+```
+✓ Compiled successfully
+✓ Generating static pages (5/5)
+Route (app)        Size     First Load JS
+○ /                63.7 kB  151 kB
+○ /_not-found      871 B    87.9 kB
+```
+- No TypeScript errors, no hydration warnings in build output.
+- Two minor Next.js font warnings (non-critical, Google Fonts CDN usage in `<head>`).
