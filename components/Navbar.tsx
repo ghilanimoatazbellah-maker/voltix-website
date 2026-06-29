@@ -40,6 +40,25 @@ export default function Navbar() {
     }
   };
 
+  const handleMobileLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    
+    // 1. Close the menu immediately to stabilize the layout
+    setMenuOpen(false);
+    
+    // 2. Wait for the closing drawer animation (300ms) to complete, then scroll smoothly
+    setTimeout(() => {
+      if (targetId === "#") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        const element = document.querySelector(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    }, 300);
+  };
+
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       scrolled || menuOpen
@@ -102,7 +121,7 @@ export default function Navbar() {
             <span className="material-symbols-outlined text-sm">language</span>
             <span>{lang === "ar" ? "EN" : "العربية"}</span>
           </button>
-
+          
           <a 
             href="#contact" 
             className="bg-primary hover:bg-primary/90 text-white font-bold text-sm px-6 h-12 flex items-center justify-center rounded-lg active:scale-95 transition-all duration-300 hover:translate-y-[-1px] hover:shadow-[0_0_20px_rgba(0,86,246,0.4)]"
@@ -136,43 +155,43 @@ export default function Navbar() {
             <div className="px-6 py-8 flex flex-col gap-6 font-medium text-textSecondary text-base">
               <a 
                 href="#" 
-                onClick={() => setMenuOpen(false)}
+                onClick={(e) => handleMobileLinkClick(e, "#")}
                 className="text-primary hover:text-primary transition-colors py-1 border-b border-borderColor/10"
               >
                 {t("nav.home")}
               </a>
               <a 
                 href="#why" 
-                onClick={() => setMenuOpen(false)}
+                onClick={(e) => handleMobileLinkClick(e, "#why")}
                 className="hover:text-primary transition-colors py-1 border-b border-borderColor/10"
               >
                 {t("nav.why")}
               </a>
               <a 
                 href="#how" 
-                onClick={() => setMenuOpen(false)}
+                onClick={(e) => handleMobileLinkClick(e, "#how")}
                 className="hover:text-primary transition-colors py-1 border-b border-borderColor/10"
               >
                 {t("nav.how")}
               </a>
               <a 
                 href="#portfolio" 
-                onClick={() => setMenuOpen(false)}
+                onClick={(e) => handleMobileLinkClick(e, "#portfolio")}
                 className="hover:text-primary transition-colors py-1 border-b border-borderColor/10"
               >
                 {t("nav.portfolio")}
               </a>
               <a 
                 href="#pricing" 
-                onClick={() => setMenuOpen(false)}
+                onClick={(e) => handleMobileLinkClick(e, "#pricing")}
                 className="hover:text-primary transition-colors py-1 border-b border-borderColor/10"
               >
                 {t("nav.pricing")}
               </a>
               <a 
                 href="#faq" 
-                onClick={() => setMenuOpen(false)}
-                className="hover:text-primary transition-colors py-1 border-b border-borderColor/10"
+                onClick={(e) => handleMobileLinkClick(e, "#faq")}
+                className="hover:text-primary transition-colors py-1"
               >
                 {t("nav.faq")}
               </a>
@@ -204,7 +223,7 @@ export default function Navbar() {
 
                 <a 
                   href="#contact" 
-                  onClick={() => setMenuOpen(false)}
+                  onClick={(e) => handleMobileLinkClick(e, "#contact")}
                   className="bg-primary hover:bg-primary/90 text-white font-bold text-sm px-6 h-12 flex items-center justify-center rounded-lg active:scale-95 transition-all duration-300"
                 >
                   {t("nav.cta")}
