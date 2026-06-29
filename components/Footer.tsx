@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+import Image from "next/image";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -28,12 +29,13 @@ export default function Footer() {
           {/* Column 1: Brand & Contact Info (span 4) */}
           <div className="lg:col-span-4 space-y-6 flex flex-col items-center lg:items-start">
             <a href="#" className="flex items-center gap-2 group justify-center lg:justify-start">
-              <div className="w-8 h-8 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center overflow-hidden">
-                <span className="material-symbols-outlined text-primary text-xl font-bold">bolt</span>
-              </div>
-              <span className="font-heading font-extrabold text-2xl tracking-tight text-textPrimary">
-                Voltix<span className="text-secondary">Digital</span>
-              </span>
+              <Image 
+                src="/logo-full.webp" 
+                alt="Voltix Digital Logo" 
+                width={200} 
+                height={50} 
+                className="object-contain rounded-lg"
+              />
             </a>
             <p className="text-sm text-textSecondary leading-relaxed max-w-sm">
               {t("footer.sub")}

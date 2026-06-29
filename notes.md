@@ -125,3 +125,10 @@ Route (app)        Size     First Load JS
 | `FAQ.tsx` | `py-24` → `py-14 md:py-24`; `space-y-16` → `space-y-10 md:space-y-16`; button `text-lg` → `text-base sm:text-lg`; padding `p-6` → `p-4 sm:p-6`; added `overflow-hidden` |
 | `Contact.tsx` | `py-24` → `py-14 md:py-24`; `space-y-16` → `space-y-10 md:space-y-16` |
 | `Testimonials.tsx` | `py-20` → `py-12 md:py-20`; `px-12` card → `px-6 sm:px-12`; added `overflow-hidden` |
+
+## 🖼️ Logo Replacement & WebP Conversion (2026-06-29)
+- **Asset Integration:** Copied brand assets `logo-full.jpg` and `logo-icon.jpg` from the Brand repository, then converted them to WebP format (`logo-full.webp` and `logo-icon.webp`) for improved performance using the `sharp` library.
+- **Navbar logo:** Replaced the code-rendered logo in `Navbar.tsx` with `<Image src="/logo-icon.webp" alt="Voltix Digital Logo" width={44} height={44} className="object-contain rounded-lg" />`.
+- **Footer logo:** Replaced the code-rendered logo in `Footer.tsx` with `<Image src="/logo-full.webp" alt="Voltix Digital Logo" width={200} height={50} className="object-contain rounded-lg" />`.
+- **Clean up:** Deleted the original `.jpg` files from the `public/` directory.
+- **Imports:** Imported `Image` from `next/image` in both components.

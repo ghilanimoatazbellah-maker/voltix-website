@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -68,13 +69,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 md:px-8 flex justify-between items-center relative z-50">
         {/* Logo left */}
         <a href="#" onClick={() => setMenuOpen(false)} className="flex items-center gap-2 group">
-          <div className="relative w-8 h-8 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center overflow-hidden">
-            <div className="absolute inset-0 bg-primary/20 blur-sm rounded-full group-hover:scale-110 transition-transform"></div>
-            <span className="material-symbols-outlined text-primary text-xl font-bold relative z-10">bolt</span>
-          </div>
-          <span className="font-heading font-extrabold text-2xl tracking-tight text-textPrimary">
-            Voltix<span className="text-secondary">Digital</span>
-          </span>
+          <Image 
+            src="/logo-icon.webp" 
+            alt="Voltix Digital Logo" 
+            width={44} 
+            height={44} 
+            className="object-contain rounded-lg"
+          />
         </a>
 
         {/* Links center (Desktop only) */}
