@@ -72,8 +72,8 @@ export default function Navbar() {
           <Image 
             src="/logo-icon.png" 
             alt="Voltix Digital Logo" 
-            width={56} 
-            height={56} 
+            width={72} 
+            height={72} 
             className="object-contain rounded-lg logo-light-fix"
           />
         </a>
