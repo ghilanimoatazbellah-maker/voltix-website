@@ -82,22 +82,20 @@ export default function Portfolio() {
     <section id="portfolio" className="py-24 px-4 md:px-8 relative">
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-          <div className="space-y-4">
-            {lang === "ar" ? (
-              <h2 className="text-3xl md:text-5xl font-heading font-extrabold text-textPrimary leading-tight">
-                أحدث <span className="bg-gradient-to-r from-primary to-cyanAccent bg-clip-text text-transparent">أعمالنا</span>
-              </h2>
-            ) : (
-              <h2 className="text-3xl md:text-5xl font-heading font-extrabold text-textPrimary leading-tight">
-                Our Latest <span className="bg-gradient-to-r from-primary to-cyanAccent bg-clip-text text-transparent">Work</span>
-              </h2>
-            )}
-            <p className="text-textSecondary text-sm sm:text-base md:text-lg max-w-xl">
-              {t("portfolio.sub")}
-            </p>
-          </div>
-          <div className="text-xs font-semibold text-textSecondary px-3 py-1.5 rounded-full bg-white/5 border border-borderColor select-none">
+        <div className="text-center space-y-4 max-w-2xl mx-auto">
+          {lang === "ar" ? (
+            <h2 className="text-3xl md:text-5xl font-heading font-extrabold text-textPrimary leading-tight">
+              أحدث <span className="bg-gradient-to-r from-primary to-cyanAccent bg-clip-text text-transparent">أعمالنا</span>
+            </h2>
+          ) : (
+            <h2 className="text-3xl md:text-5xl font-heading font-extrabold text-textPrimary leading-tight">
+              Our Latest <span className="bg-gradient-to-r from-primary to-cyanAccent bg-clip-text text-transparent">Work</span>
+            </h2>
+          )}
+          <p className="text-textSecondary text-sm sm:text-base md:text-lg">
+            {t("portfolio.sub")}
+          </p>
+          <div className="inline-flex items-center text-xs font-semibold text-textSecondary px-3 py-1.5 rounded-full bg-white/5 border border-borderColor select-none">
             {t("portfolio.badge")}
           </div>
         </div>
