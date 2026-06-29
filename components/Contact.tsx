@@ -253,8 +253,8 @@ export default function Contact() {
 
               <div className="pt-4 flex flex-col items-center gap-1">
                 <span className="text-[10px] text-textSecondary/50 font-bold block" dir="ltr">{t("contact.wa.orEmail")}</span>
-                <a href="mailto:voltix.dz.studio@gmail.com" className="text-primary hover:text-cyanAccent hover:underline underline-offset-2 transition-colors text-sm font-bold">
-                  voltix.dz.studio@gmail.com
+                <a href="mailto:voltix.work@gmail.com" className="text-primary hover:text-cyanAccent hover:underline underline-offset-2 transition-colors text-sm font-bold">
+                  voltix.work@gmail.com
                 </a>
               </div>
             </div>

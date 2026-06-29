@@ -43,8 +43,8 @@ export default function Footer() {
             <div className="space-y-3 text-xs text-textSecondary/80 w-full flex flex-col items-center lg:items-start">
               <div className="flex items-center gap-2 justify-center lg:justify-start">
                 <span className="material-symbols-outlined text-primary text-lg">mail</span>
-                <a href="mailto:voltix.dz.studio@gmail.com" className="hover:text-primary hover:underline underline-offset-2 transition-all">
-                  voltix.dz.studio@gmail.com
+                <a href="mailto:voltix.work@gmail.com" className="hover:text-primary hover:underline underline-offset-2 transition-all">
+                  voltix.work@gmail.com
                 </a>
               </div>
 
