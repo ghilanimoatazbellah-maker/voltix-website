@@ -80,3 +80,8 @@ All design tokens have been strictly followed:
 3. **SerumAraqi** -> [Live Site](https://serumaraqi-cosmetics.netlify.app)
 4. **VoltixProX** -> [Live Site](https://voltix-pro-x.netlify.app)
 5. **CleanX Pro** -> [Live Site](https://cleanx-pro.netlify.app)
+
+## 🔧 Mobile Audit (2026-06-29)
+- **Viewport meta tag:** Added `<meta name="viewport" content="width=device-width, initial-scale=1" />` to `app/layout.tsx` to ensure correct mobile scaling.
+- **Fixed pixel widths:** Audited all components and `globals.css` — no hardcoded `width: Xpx` values found. All containers use Tailwind responsive utilities (`max-w-7xl`, `w-full`, `px-4`, etc.).
+- **Status:** ✅ No horizontal overflow issues detected.

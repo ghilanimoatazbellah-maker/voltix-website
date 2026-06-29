@@ -58,7 +58,7 @@ const translations = {
     "portfolio.title": "أحدث أعمالنا",
     "portfolio.sub": "تصفح عينات حية من صفحات الهبوط السريعة التي صممناها لشركائنا وحققت مبيعات قياسية.",
     "portfolio.badge": "مستضافة على Netlify ⚡",
-    "portfolio.view": "شوف الصفحة",
+    "portfolio.view": "تصفح الصفحة",
     // Pricing
     "pricing.title": "استثمار بسيط، عائد مالي ضخم",
     "pricing.sub": "باقة انطلاق شاملة وشفافة لأول 3 عملاء فقط (متبقي مقعد واحد فقط بسعر العرض!).",
