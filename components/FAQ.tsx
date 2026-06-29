@@ -32,11 +32,11 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-24 px-4 md:px-8 max-w-4xl mx-auto relative">
+    <section id="faq" className="py-14 md:py-24 px-4 md:px-8 max-w-4xl mx-auto relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
 
-      <div className="space-y-16">
+      <div className="space-y-10 md:space-y-16">
         {/* Header */}
         <div className="text-center space-y-4">
           {lang === "ar" ? (
@@ -64,7 +64,7 @@ export default function FAQ() {
               >
                 <button
                   onClick={() => toggleFAQ(idx)}
-                  className="w-full p-6 text-start flex justify-between items-center font-bold text-lg text-textPrimary hover:text-primary transition-colors gap-4"
+                  className="w-full p-4 sm:p-6 text-start flex justify-between items-center font-bold text-base sm:text-lg text-textPrimary hover:text-primary transition-colors gap-4"
                 >
                   <span className="font-heading">{faq.q}</span>
                   <span className={`material-symbols-outlined transition-transform duration-300 text-textSecondary ${
@@ -82,7 +82,7 @@ export default function FAQ() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
-                      <div className="p-6 pt-0 text-textSecondary text-sm leading-relaxed border-t border-white/5">
+                      <div className="p-4 sm:p-6 pt-0 text-textSecondary text-sm leading-relaxed border-t border-white/5">
                         {faq.a}
                       </div>
                     </motion.div>

@@ -79,8 +79,8 @@ export default function Portfolio() {
   ];
 
   return (
-    <section id="portfolio" className="py-24 px-4 md:px-8 relative">
-      <div className="max-w-7xl mx-auto space-y-16">
+    <section id="portfolio" className="py-14 md:py-24 px-4 md:px-8 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto space-y-10 md:space-y-16">
         {/* Header */}
         <div className="text-center space-y-4 max-w-2xl mx-auto">
           {lang === "ar" ? (

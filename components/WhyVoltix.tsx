@@ -70,11 +70,11 @@ export default function WhyVoltix() {
   ];
 
   return (
-    <section id="why" className="py-24 px-4 md:px-8 relative">
+    <section id="why" className="py-14 md:py-24 px-4 md:px-8 relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto space-y-16">
+      <div className="max-w-7xl mx-auto space-y-10 md:space-y-16">
         {/* Header */}
         <div className="text-center space-y-4 max-w-2xl mx-auto">
           {lang === "ar" ? (

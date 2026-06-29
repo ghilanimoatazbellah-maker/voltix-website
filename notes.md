@@ -104,3 +104,24 @@ Route (app)        Size     First Load JS
 ```
 - No TypeScript errors, no hydration warnings in build output.
 - Two minor Next.js font warnings (non-critical, Google Fonts CDN usage in `<head>`).
+
+## 📱 Mobile Sizing Audit (2026-06-29)
+**Reference:** Studied `VoltixProX_Headphones/index.html` and `CleanXPro_Vacuum/index.html` for mobile patterns.
+
+**Reference page mobile patterns adopted:**
+- Container: `max-w-sm mx-auto`, `px-4` padding (16px)
+- Font sizes: 11–16px body, 18–20px headings
+- Section padding: compact py, single-column stacking, no overflowing glow elements
+
+**Changes applied (mobile only — desktop styles untouched):**
+
+| Component | Change |
+|-----------|--------|
+| `Hero.tsx` | h1 `text-4xl` → `text-3xl sm:text-5xl`; buttons `text-base sm:text-lg` |
+| `WhyVoltix.tsx` | `py-24` → `py-14 md:py-24`; `space-y-16` → `space-y-10 md:space-y-16`; added `overflow-hidden` |
+| `HowItWorks.tsx` | `py-24` → `py-14 md:py-24`; `space-y-20` → `space-y-12 md:space-y-20` |
+| `Portfolio.tsx` | `py-24` → `py-14 md:py-24`; `space-y-16` → `space-y-10 md:space-y-16`; added `overflow-hidden` |
+| `Pricing.tsx` | `py-24` → `py-14 md:py-24`; `space-y-16` → `space-y-10 md:space-y-16` |
+| `FAQ.tsx` | `py-24` → `py-14 md:py-24`; `space-y-16` → `space-y-10 md:space-y-16`; button `text-lg` → `text-base sm:text-lg`; padding `p-6` → `p-4 sm:p-6`; added `overflow-hidden` |
+| `Contact.tsx` | `py-24` → `py-14 md:py-24`; `space-y-16` → `space-y-10 md:space-y-16` |
+| `Testimonials.tsx` | `py-20` → `py-12 md:py-20`; `px-12` card → `px-6 sm:px-12`; added `overflow-hidden` |

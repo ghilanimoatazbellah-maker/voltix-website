@@ -88,11 +88,11 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 px-4 md:px-8 max-w-7xl mx-auto relative overflow-hidden">
+    <section id="contact" className="py-14 md:py-24 px-4 md:px-8 max-w-7xl mx-auto relative overflow-hidden">
       {/* Glow circles */}
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
 
-      <div className="space-y-16">
+      <div className="space-y-10 md:space-y-16">
         {/* Header */}
         <div className="text-center space-y-4 max-w-2xl mx-auto">
           {lang === "ar" ? (

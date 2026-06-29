@@ -47,14 +47,14 @@ export default function Hero() {
 
           <div className="space-y-5 w-full">
             {lang === "ar" ? (
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-heading font-black leading-[1.1] text-textPrimary tracking-tight">
+              <h1 className="text-3xl sm:text-5xl lg:text-7xl font-heading font-black leading-[1.1] text-textPrimary tracking-tight">
                 نعزز المبيعات. <br />
                 <span className="bg-gradient-to-r from-primary to-cyanAccent bg-clip-text text-transparent">
                   ونقوّي العلامات التجارية.
                 </span>
               </h1>
             ) : (
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-heading font-black leading-[1.1] text-textPrimary tracking-tight">
+              <h1 className="text-3xl sm:text-5xl lg:text-7xl font-heading font-black leading-[1.1] text-textPrimary tracking-tight">
                 Powering Sales. <br />
                 <span className="bg-gradient-to-r from-primary to-cyanAccent bg-clip-text text-transparent">
                   Empowering Brands.
@@ -72,13 +72,13 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto">
             <a 
               href="#contact" 
-              className="w-full sm:w-auto text-center bg-primary hover:bg-primary/95 text-white font-bold text-lg px-8 py-4 rounded-xl active:scale-95 transition-all shadow-xl hover:shadow-[0_0_25px_rgba(0,86,246,0.3)] duration-300 hover:translate-y-[-2px]"
+              className="w-full sm:w-auto text-center bg-primary hover:bg-primary/95 text-white font-bold text-base sm:text-lg px-8 py-4 rounded-xl active:scale-95 transition-all shadow-xl hover:shadow-[0_0_25px_rgba(0,86,246,0.3)] duration-300 hover:translate-y-[-2px]"
             >
               {t("hero.ctaPrimary")}
             </a>
             <a 
               href="#portfolio" 
-              className="w-full sm:w-auto text-center glass hover:bg-white/5 text-textPrimary border border-borderColor font-bold text-lg px-8 py-4 rounded-xl active:scale-95 transition-all duration-300 hover:translate-y-[-2px]"
+              className="w-full sm:w-auto text-center glass hover:bg-white/5 text-textPrimary border border-borderColor font-bold text-base sm:text-lg px-8 py-4 rounded-xl active:scale-95 transition-all duration-300 hover:translate-y-[-2px]"
             >
               {t("hero.ctaSecondary")}
             </a>

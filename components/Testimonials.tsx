@@ -7,10 +7,10 @@ export default function Testimonials() {
   const { lang } = useLanguage();
 
   return (
-    <section className="py-20 px-6 md:px-8 max-w-7xl mx-auto text-center relative">
+    <section className="py-12 md:py-20 px-4 md:px-8 max-w-7xl mx-auto text-center relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-secondary/5 rounded-full blur-[80px] -z-10 pointer-events-none"></div>
 
-      <div className="space-y-12">
+      <div className="space-y-8 md:space-y-12">
         {/* Header */}
         <div className="space-y-4 max-w-2xl mx-auto">
           <h2 className="text-2xl font-heading font-extrabold text-textSecondary/50 uppercase tracking-widest text-sm">
@@ -28,7 +28,7 @@ export default function Testimonials() {
             whileInView={{ opacity: 0.5, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="glass border-dashed border-2 px-12 py-10 rounded-[2rem] max-w-sm w-full space-y-4 relative overflow-hidden"
+            className="glass border-dashed border-2 px-6 sm:px-12 py-8 sm:py-10 rounded-[2rem] max-w-sm w-full space-y-4 relative overflow-hidden"
           >
             <span className="material-symbols-outlined text-textSecondary/20 text-4xl block">format_quote</span>
             <p className="italic text-lg text-textSecondary/30">{lang === "ar" ? "قريباً — Coming Soon" : "Coming Soon"}</p>

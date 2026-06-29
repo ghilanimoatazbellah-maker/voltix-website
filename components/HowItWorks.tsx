@@ -56,11 +56,11 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section id="how" className="py-24 bg-surface/30 px-4 md:px-8 relative overflow-hidden">
+    <section id="how" className="py-14 md:py-24 bg-surface/30 px-4 md:px-8 relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute -left-1/4 top-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[130px] -z-10 pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto space-y-20 relative z-10">
+      <div className="max-w-7xl mx-auto space-y-12 md:space-y-20 relative z-10">
         {/* Header */}
         <div className="text-center space-y-4 max-w-2xl mx-auto">
           {lang === "ar" ? (

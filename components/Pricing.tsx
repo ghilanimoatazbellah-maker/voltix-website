@@ -21,11 +21,11 @@ export default function Pricing() {
   ];
 
   return (
-    <section id="pricing" className="py-24 px-4 md:px-8 relative overflow-hidden">
+    <section id="pricing" className="py-14 md:py-24 px-4 md:px-8 relative overflow-hidden">
       {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
 
-      <div className="max-w-4xl mx-auto space-y-16 relative z-10">
+      <div className="max-w-4xl mx-auto space-y-10 md:space-y-16 relative z-10">
         {/* Header */}
         <div className="text-center space-y-4 max-w-2xl mx-auto">
           {lang === "ar" ? (
