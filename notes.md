@@ -126,9 +126,10 @@ Route (app)        Size     First Load JS
 | `Contact.tsx` | `py-24` → `py-14 md:py-24`; `space-y-16` → `space-y-10 md:space-y-16` |
 | `Testimonials.tsx` | `py-20` → `py-12 md:py-20`; `px-12` card → `px-6 sm:px-12`; added `overflow-hidden` |
 
-## 🖼️ Logo Replacement & WebP Conversion (2026-06-29)
-- **Asset Integration:** Copied brand assets `logo-full.jpg` and `logo-icon.jpg` from the Brand repository, then converted them to WebP format (`logo-full.webp` and `logo-icon.webp`) for improved performance using the `sharp` library.
-- **Navbar logo:** Replaced the code-rendered logo in `Navbar.tsx` with `<Image src="/logo-icon.webp" alt="Voltix Digital Logo" width={44} height={44} className="object-contain rounded-lg" />`.
-- **Footer logo:** Replaced the code-rendered logo in `Footer.tsx` with `<Image src="/logo-full.webp" alt="Voltix Digital Logo" width={200} height={50} className="object-contain rounded-lg" />`.
-- **Clean up:** Deleted the original `.jpg` files from the `public/` directory.
-- **Imports:** Imported `Image` from `next/image` in both components.
+## 🖼️ Logo Replacement & WebP/PNG Integration (2026-06-29)
+- **Asset Integration:** Copied transparent PNG brand assets `logo-full-removebg-preview.png` and `logo-icon-removebg-preview.png` from the Brand repository to `public/logo-full.png` and `public/logo-icon.png`.
+- **Navbar logo:** Replaced the logo image in `Navbar.tsx` with `<Image src="/logo-icon.png" alt="Voltix Digital Logo" width={44} height={44} className="object-contain rounded-lg logo-light-fix" />`.
+- **Footer logo:** Replaced the logo image in `Footer.tsx` with `<Image src="/logo-full.png" alt="Voltix Digital Logo" width={160} height={48} className="object-contain rounded-lg logo-light-fix" />`.
+- **Light Mode Visibility:** Added `.logo-light-fix` CSS styles to `globals.css` with a custom filter to auto-colorize/darken the transparent logos in light mode (`html.light`), preventing them from disappearing on the white background.
+- **Clean up:** Deleted old WebP files from the `public/` directory.
+

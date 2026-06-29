@@ -30,11 +30,11 @@ export default function Footer() {
           <div className="lg:col-span-4 space-y-6 flex flex-col items-center lg:items-start">
             <a href="#" className="flex items-center gap-2 group justify-center lg:justify-start">
               <Image 
-                src="/logo-full.webp" 
+                src="/logo-full.png" 
                 alt="Voltix Digital Logo" 
-                width={200} 
-                height={50} 
-                className="object-contain rounded-lg"
+                width={160} 
+                height={48} 
+                className="object-contain rounded-lg logo-light-fix"
               />
             </a>
             <p className="text-sm text-textSecondary leading-relaxed max-w-sm">
