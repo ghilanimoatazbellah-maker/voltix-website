@@ -3,30 +3,58 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  /* Default: Dark Theme (per brand requirement) */
+  --color-bg: #0A0B10;
+  --color-surface: #12131C;
+  --color-primary: #0056F6;
+  --color-secondary: #8B5CF6;
+  --color-cyanAccent: #00F0FF;
+  --color-text-primary: #F3F4F6;
+  --color-text-secondary: #9CA3AF;
+  --color-border: rgba(255, 255, 255, 0.08);
+  
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html.light {
+  /* Light Theme overrides */
+  --color-bg: #F5F7FB;
+  --color-surface: #FFFFFF;
+  --color-primary: #004BD3;
+  --color-secondary: #6D28D9;
+  --color-cyanAccent: #0891B2;
+  --color-text-primary: #0F111A;
+  --color-text-secondary: #4B5563;
+  --color-border: rgba(15, 17, 26, 0.08);
+  
+  --glass-bg: rgba(15, 17, 26, 0.02);
+  --glass-border: rgba(15, 17, 26, 0.06);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 @layer utilities {
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    transition: background 0.3s ease, border 0.3s ease;
+  }
+  
   .text-balance {
     text-wrap: balance;
   }
