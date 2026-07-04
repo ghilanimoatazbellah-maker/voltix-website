@@ -155,5 +155,84 @@ Route (app)        Size     First Load JS
 - **Assets:** Logo and 4 variant images (Black, Gray, Camel, Brown) copied from the user media attachments.
 - **Verifications:** Fully audited and validated at a 390px viewport width using local server verification.
 
+---
+
+## ☁️ Cloudflare Pages Deployment Prep — 2026-07-04
+
+### Changes Made
+
+#### 1. `next.config.mjs` — Rewritten
+- Added `output: 'export'` to enable static HTML export (no server needed).
+- Added `images: { unoptimized: true }` — required because Next.js image optimization relies on a running Node.js server, which doesn't exist in static export mode. With `unoptimized: true`, images are served as-is from `public/` which is perfectly fine for Cloudflare Pages CDN.
+- Removed the `async headers()` function entirely — it is a no-op in static export mode (no server to apply headers at request time).
+
+#### 2. `public/_headers` — New File
+- Migrated all 5 security headers from the old `headers()` config into a Cloudflare-native `_headers` plain-text file.
+- Cloudflare Pages reads this file from the output root and applies headers as edge-level HTTP response headers for all routes (`/*`).
+- Headers migrated:
+  - `X-Frame-Options: DENY`
+  - `X-Content-Type-Options: nosniff`
+  - `Referrer-Policy: origin-when-cross-origin`
+  - `Strict-Transport-Security: max-age=31536000; includeSubDomains; preload`
+  - `X-XSS-Protection: 1; mode=block`
+
+### Compatibility Audit Results
+
+| Check | Result |
+|---|---|
+| `app/api/` routes | ✅ None found |
+| `pages/api/` routes | ✅ None found |
+| `getServerSideProps` | ✅ None found |
+| Dynamic route segments `[slug]` | ✅ None found |
+| `next/navigation` (server hooks) | ✅ None found |
+| `next/image` usage | ⚠️ Found in 4 files (Navbar, Hero, Portfolio, Footer) → Fixed with `unoptimized: true` |
+| Middleware | ✅ None found |
+
+### Build Results
+- **Command:** `npx next build`
+- **Status:** ✅ SUCCESS — No errors
+- **Warnings (non-blocking):**
+  - `@next/next/google-font-display`: Material Symbols CSS loaded via `<link>` in layout.tsx — not blocking, fonts load correctly.
+  - `@next/next/no-page-custom-font`: Same as above — warning only, not an error.
+- **Output:** `out/` folder generated with `index.html` (63.7 kB), all assets, and `_headers` file.
+- **Static pages generated:** 5/5 ✅
+
+### Local Verification Results (via `npx serve out -p 3001`)
+All HTTP requests returned `200 OK`:
+
+| Asset | Status |
+|---|---|
+| `index.html` | ✅ 200 |
+| All 6 portfolio images (`.webp`) | ✅ 200 |
+| `logo-icon.png`, `logo-full.png` | ✅ 200 |
+| `headphone-hero.webp` | ✅ 200 |
+| All JS chunks + CSS | ✅ 200 |
+| `favicon.ico` | ✅ 200 |
+
+**UI Tests (at ~500px mobile width, closest to 390px in browser env):**
+- ✅ Hero section renders correctly (Arabic default, countdown timer working)
+- ✅ Hamburger menu opens/closes with animation
+- ✅ Theme toggle: Dark ↔ Light mode works, persists via localStorage
+- ✅ Language toggle: AR (RTL) ↔ EN (LTR) works, layout flips correctly
+- ✅ Portfolio section: All 5 project cards render with images, demo links intact
+- ✅ Pricing section: Renders with correct price (3,000 DZD)
+- ✅ FAQ section: All questions visible
+- ✅ Footer: WhatsApp CTA link (`wa.me/213672099942`), Instagram, Facebook links intact
+- ✅ Contact section: WhatsApp submission link functional
+
+### Git Commit
+- **Commit:** `9831e90` — `chore: convert to static export for Cloudflare Pages deployment`
+- **Branch:** `main` (connected to `origin/main`)
+- **Files committed:** `next.config.mjs`, `public/_headers`
+- **Status:** Committed, NOT pushed (manual push step pending)
+
+### Next Steps (Manual)
+1. Push to GitHub: `git push origin main`
+2. Connect repo to Cloudflare Pages (Dashboard → Workers & Pages → Create → Connect Git)
+3. Build settings in Cloudflare:
+   - **Framework preset:** Next.js (Static HTML Export)
+   - **Build command:** `npx next build`
+   - **Build output directory:** `out`
+   - **Node.js version:** 18 or 20
 
 
