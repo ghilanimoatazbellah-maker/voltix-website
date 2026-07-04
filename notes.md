@@ -133,3 +133,27 @@ Route (app)        Size     First Load JS
 - **Light Mode Visibility:** Added `.logo-light-fix` CSS styles to `globals.css` with a custom filter to auto-colorize/darken the transparent logos in light mode (`html.light`), preventing them from disappearing on the white background.
 - **Clean up:** Deleted old WebP files from the `public/` directory.
 
+## 📬 Outreach Messages Folder & Templates (2026-07-02)
+- **Directory Created:** `07_Docs/Client_Workflow/Outreach_Messages/` containing all outreach templates.
+- **Formulas & Philosophy:** Documented the "لا تبيع الخدمة، بع إزالة المشكلة" outreach structure in [README.md](file:///e:/Voltix/07_Docs/Client_Workflow/Outreach_Messages/README.md).
+- **Messages & Templates Created:**
+  - [perfume-message.md](file:///e:/Voltix/07_Docs/Client_Workflow/Outreach_Messages/perfume-message.md) (Finalized Arabic outreach message for Perfumes)
+  - [jewelry-message.md](file:///e:/Voltix/07_Docs/Client_Workflow/Outreach_Messages/jewelry-message.md) (Template for Jewelry)
+  - [cosmetics-message.md](file:///e:/Voltix/07_Docs/Client_Workflow/Outreach_Messages/cosmetics-message.md) (Template for Cosmetics)
+  - [shoes-message.md](file:///e:/Voltix/07_Docs/Client_Workflow/Outreach_Messages/shoes-message.md) (Template for Shoes)
+  - [clothing-message.md](file:///e:/Voltix/07_Docs/Client_Workflow/Outreach_Messages/clothing-message.md) (Template for Clothing)
+  - [electronics-message.md](file:///e:/Voltix/07_Docs/Client_Workflow/Outreach_Messages/electronics-message.md) (Template for Electronics)
+  - [home-appliances-message.md](file:///e:/Voltix/07_Docs/Client_Workflow/Outreach_Messages/home-appliances-message.md) (Template for Home Appliances)
+
+## 👟 MyShoesDZ Sneakers Client Showcase (2026-07-02)
+- **Directory Created:** [MyShoesDZ_Sneakers/](file:///e:/Voltix/03_Clients/MyShoesDZ_Sneakers/) containing the full mobile-first landing page.
+- **Product Details:** Milano-style Men's Casual Sneaker. Pricing: 2,800 DZD per pair, with a 2-pair promo of 4,900 DZD.
+- **Integrations:**
+  - WhatsApp primary order submission flow (+213 672 099 942).
+  - Google Sheets background backup logging flow (`no-cors` mode).
+  - Algeria 69 wilayas & communes local cascade data populated from `assets/data.js`.
+- **Assets:** Logo and 4 variant images (Black, Gray, Camel, Brown) copied from the user media attachments.
+- **Verifications:** Fully audited and validated at a 390px viewport width using local server verification.
+
+
+
