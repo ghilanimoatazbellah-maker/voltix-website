@@ -10,14 +10,14 @@ export default function Pricing() {
     "تصميم مخصص 100% لمنتجك (لا نستخدم قوالب جاهزة)",
     "ربط تلقائي ومباشر بـ Google Sheets لاستقبال الطلبات فوراً",
     "استمارة دفع ذكية تدعم كود الولايات الـ 69 والبلديات مدمجة",
-    "3 جولات مراجعة وتعديل مجانية بالكامل لضمان رضاك التام",
-    "تسليم سريع خلال 48 ساعة أو تسترجع أموالك وتأخذ الصفحة مجاناً",
+    "تعديلات معقولة قبل التسليم مشمولة لضمان رضاك",
+    "تسليم عادة خلال 2 إلى 3 أيام عمل",
   ] : [
     "100% custom design built for your product (no generic templates)",
     "Direct auto-integration with Google Sheets to collect orders instantly",
     "Smart shipping form with built-in 69 Wilayas & communes dropdowns",
-    "3 complete rounds of revisions and edits for 100% satisfaction",
-    "48-hour rapid delivery or your money back and get the page for free",
+    "Reasonable pre-delivery revisions included to ensure your satisfaction",
+    "Typical delivery within 2 to 3 business days",
   ];
 
   return (
@@ -64,12 +64,9 @@ export default function Pricing() {
                   <div className="flex items-baseline gap-2">
                     <span className="text-xs font-bold text-textSecondary">{t("pricing.priceLabel")}</span>
                     <span className="text-4xl sm:text-5xl md:text-6xl font-heading font-black text-textPrimary">
-                      {lang === "ar" ? "3,000 دج" : "3,000 DZD"}
+                      {lang === "ar" ? "ابتداءً من 7,000 دج" : "Starting from 7,000 DZD"}
                     </span>
                   </div>
-                  <p className="text-xs sm:text-sm text-cyanAccent font-bold">
-                    {t("pricing.futurePrice")}
-                  </p>
                 </div>
               </div>
 

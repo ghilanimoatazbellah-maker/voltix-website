@@ -235,4 +235,30 @@ All HTTP requests returned `200 OK`:
    - **Build output directory:** `out`
    - **Node.js version:** 18 or 20
 
+---
 
+## 📝 Changelog
+
+### 2026-07-07 — Pricing Section Copy Update (Locked Pricing Decisions)
+
+**Files changed:** `components/Pricing.tsx`, `context/LanguageContext.tsx`
+
+#### Changes made:
+
+1. **Price display** — Updated from `"3,000 دج"` / `"3,000 DZD"` to `"ابتداءً من 7,000 دج"` / `"Starting from 7,000 DZD"`. The `priceLabel` EN key was also updated from `"Current Price:"` to `"Starting From:"` to match.
+
+2. **Removed: client-count price-jump line** — The `pricing.futurePrice` translation key and its rendered `<p>` element in `Pricing.tsx` have been removed entirely. No count-based scarcity statement replaced it.
+
+3. **Delivery time** — Changed from `"تسليم سريع خلال 48 ساعة أو تسترجع أموالك وتأخذ الصفحة مجاناً"` to `"تسليم عادة خلال 2 إلى 3 أيام عمل"` (EN: `"Typical delivery within 2 to 3 business days"`). The money-back/free-page guarantee wording was removed entirely.
+
+4. **Revisions** — Changed from `"3 جولات مراجعة وتعديل مجانية بالكامل لضمان رضاك التام"` to `"تعديلات معقولة قبل التسليم مشمولة لضمان رضاك"` (EN: `"Reasonable pre-delivery revisions included to ensure your satisfaction"`). Specific count of 3 removed.
+
+5. **Scarcity subtitle (`pricing.sub`)** — Removed client-count-based urgency (`"لأول 3 عملاء فقط"` / `"first 3 clients"`). Replaced with time-based urgency: AR: `"عرض الإطلاق لفترة محدودة."` / EN: `"Launch offer — limited time."`.
+
+6. **FAQ answers updated to match** — `faq.a1` (delivery time) and `faq.a2` (revisions) were updated in both AR and EN to be consistent with the new Pricing section copy. `faq.q2` question wording updated from "how many free revisions" to "what is the revision policy".
+
+#### Unchanged (by design):
+- 100% custom design line
+- Google Sheets direct-link line
+- 69 Wilayas/communes smart delivery form line
+- All visual layout, colors, icons, and card structure
