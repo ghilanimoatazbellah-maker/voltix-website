@@ -45,7 +45,7 @@ const translations = {
     "why.card6.desc": "توجيه تلقائي ومباشر لمعلومات الزبون إلى حساب الواتساب الخاص بك لتسهيل تأكيد الطلبات فوراً.",
     // How It Works
     "how.title": "كيف نعمل؟",
-    "how.sub": "خطوات بسيطة ومدروسة للحصول على صفحة هبوط احترافية عالية التحويل في 48 ساعة فقط.",
+    "how.sub": "خطوات بسيطة ومدروسة للحصول على صفحة هبوط احترافية عالية التحويل خلال أيام قليلة فقط.",
     "how.step1.title": "تواصل معنا",
     "how.step1.desc": "املأ استمارة الطلب بالمعلومات الأساسية لمنتجك، وسنتواصل معك فوراً لمناقشة أهدافك وهويتك البصرية.",
     "how.step2.title": "نصمم صفحتك",
@@ -132,7 +132,7 @@ const translations = {
     "why.card6.desc": "Automated redirection sending user order details directly to your WhatsApp to close sales faster.",
     // How It Works
     "how.title": "How It Works",
-    "how.sub": "Simple, structured steps to get a high-converting landing page in under 48 hours.",
+    "how.sub": "Simple, structured steps to get a high-converting landing page in just a few business days.",
     "how.step1.title": "Contact Us",
     "how.step1.desc": "Fill in the order form with your product details, and we will contact you immediately to discuss.",
     "how.step2.title": "We Design Page",

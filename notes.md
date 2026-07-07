@@ -262,3 +262,23 @@ All HTTP requests returned `200 OK`:
 - Google Sheets direct-link line
 - 69 Wilayas/communes smart delivery form line
 - All visual layout, colors, icons, and card structure
+
+---
+
+### 2026-07-07 — How It Works Subtitle Fix + Full Codebase Audit
+
+**Files changed:** `context/LanguageContext.tsx`
+
+#### Problem found:
+The `how.sub` translation key in both AR and EN still contained the old rigid 48-hour delivery claim, contradicting the updated Pricing section.
+
+#### Changes made:
+
+| Key | Language | Before | After |
+|-----|----------|--------|-------|
+| `how.sub` | AR | `خطوات بسيطة ومدروسة للحصول على صفحة هبوط احترافية عالية التحويل في 48 ساعة فقط.` | `خطوات بسيطة ومدروسة للحصول على صفحة هبوط احترافية عالية التحويل خلال أيام قليلة فقط.` |
+| `how.sub` | EN | `Simple, structured steps to get a high-converting landing page in under 48 hours.` | `Simple, structured steps to get a high-converting landing page in just a few business days.` |
+
+#### Full codebase audit result:
+Searched all `.tsx`, `.ts`, `.js` files for: `48 ساعة`, `48 hours`, `48-hour`, `3 جولات`, `3 rounds`, `3 complete`, `أول 3 عملاء`, `first 3 clients`, `futurePrice` → **0 matches found**. All stale copy has been eliminated.
+
