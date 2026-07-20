@@ -114,8 +114,7 @@ export default function Contact() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
             className="lg:col-span-7 glass p-5 sm:p-8 md:p-12 rounded-[2rem] sm:rounded-[2.5rem] flex flex-col justify-between"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -216,8 +215,7 @@ export default function Contact() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.4 }}
             className="lg:col-span-5 glass p-6 sm:p-8 md:p-12 rounded-[2rem] sm:rounded-[2.5rem] flex flex-col justify-between text-center relative overflow-hidden group"
           >
             {/* WhatsApp radial glow */}

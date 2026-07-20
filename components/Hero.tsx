@@ -31,9 +31,9 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center w-full relative z-10">
         {/* Left Column: Copy */}
         <motion.div 
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" as const }}
+          transition={{ duration: 0.4, ease: "easeOut" as const }}
           className="space-y-8 flex flex-col items-center lg:items-start text-center lg:text-start"
         >
           {/* Badge */}
@@ -89,12 +89,12 @@ export default function Hero() {
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: "easeOut" as const, delay: 0.2 }}
+          transition={{ duration: 0.5, ease: "easeOut" as const, delay: 0.15 }}
           className="relative flex justify-center items-center w-full"
         >
-          {/* Layered Neon Glow */}
-          <div className="absolute w-[320px] sm:w-[400px] h-[320px] sm:h-[400px] bg-primary/25 rounded-full blur-[100px] -z-10 animate-pulse"></div>
-          <div className="absolute w-[220px] sm:w-[280px] h-[220px] sm:h-[280px] bg-secondary/20 rounded-full blur-[70px] -z-10"></div>
+          {/* Layered Neon Glow — static opacity, no animate-pulse (expensive GPU repaint) */}
+          <div className="absolute w-[320px] sm:w-[400px] h-[320px] sm:h-[400px] bg-primary/20 rounded-full blur-[100px] -z-10"></div>
+          <div className="absolute w-[220px] sm:w-[280px] h-[220px] sm:h-[280px] bg-secondary/15 rounded-full blur-[70px] -z-10"></div>
           <div className="absolute w-[150px] h-[150px] bg-cyanAccent/10 rounded-full blur-[50px] -z-10 translate-y-12"></div>
 
           {/* Floating Phone Container */}
@@ -202,11 +202,11 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Floating Neon Elements */}
-          <div className="absolute -right-2 top-1/4 glass p-2 rounded-xl shadow-xl border border-borderColor animate-bounce hidden sm:block">
+          {/* Floating Neon Elements — removed animate-bounce/pulse (continuous GPU repaints) */}
+          <div className="absolute -right-2 top-1/4 glass p-2 rounded-xl shadow-xl border border-borderColor hidden sm:block">
             <span className="material-symbols-outlined text-cyanAccent text-xl sm:text-2xl">flash_on</span>
           </div>
-          <div className="absolute -left-2 bottom-1/4 glass p-2 rounded-xl shadow-xl border border-borderColor animate-pulse hidden sm:block">
+          <div className="absolute -left-2 bottom-1/4 glass p-2 rounded-xl shadow-xl border border-borderColor hidden sm:block">
             <span className="material-symbols-outlined text-secondary text-xl sm:text-2xl">trending_up</span>
           </div>
         </motion.div>

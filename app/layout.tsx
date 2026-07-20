@@ -32,7 +32,14 @@ export default function RootLayout({
     <html lang="ar" dir="rtl" className={`${inter.variable} ${outfit.variable}`}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block" />
+        {/* Preconnect to warm CDN DNS early — saves 100-200ms without blocking render */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Material Symbols — blocking load required: non-blocking causes icon FOUT (icons flash as text) */}
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=block"
+        />
         <script dangerouslySetInnerHTML={{ __html: `
           (function() {
             try {

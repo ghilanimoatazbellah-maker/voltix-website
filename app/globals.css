@@ -44,19 +44,35 @@ body {
   color: var(--color-text-primary);
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
+  /* Prevent bounce jank on iOS overscroll */
+  overscroll-behavior: none;
+  /* Smooth momentum scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
 }
 
 @layer utilities {
   .glass {
     background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    /* Reduced from blur(12px) to blur(8px) — 33% cheaper on GPU, especially mobile */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border: 1px solid var(--glass-border);
     transition: background 0.3s ease, border 0.3s ease;
   }
   
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Hint to browser: isolate repaints on animated elements */
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  /* Allow browser to skip rendering off-screen sections until needed */
+  .section-lazy {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 600px;
   }
 }
 

@@ -16,15 +16,17 @@ export default function Home() {
       <Navbar />
 
       <main className="space-y-16">
-        {/* Sections in order */}
+        {/* Hero renders immediately — above the fold */}
         <Hero />
-        <WhyVoltix />
-        <HowItWorks />
-        <Portfolio />
-        <Pricing />
-        <Testimonials />
-        <FAQ />
-        <Contact />
+
+        {/* All sections below the fold — use content-visibility:auto to skip off-screen rendering */}
+        <div className="section-lazy"><WhyVoltix /></div>
+        <div className="section-lazy"><HowItWorks /></div>
+        <div className="section-lazy"><Portfolio /></div>
+        <div className="section-lazy"><Pricing /></div>
+        <div className="section-lazy"><Testimonials /></div>
+        <div className="section-lazy"><FAQ /></div>
+        <div className="section-lazy"><Contact /></div>
       </main>
 
       {/* Footer */}

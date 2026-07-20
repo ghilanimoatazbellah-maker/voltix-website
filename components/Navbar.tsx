@@ -70,7 +70,7 @@ export default function Navbar() {
         {/* Logo left */}
         <a href="#" onClick={() => setMenuOpen(false)} className="flex items-center gap-2 group">
           <Image 
-            src="/logo-icon.png" 
+            src="/logo-icon.webp" 
             alt="Voltix Digital Logo" 
             width={72} 
             height={72} 

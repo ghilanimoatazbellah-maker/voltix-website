@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Testimonials() {
@@ -23,12 +22,8 @@ export default function Testimonials() {
 
         {/* Empty state designs */}
         <div className="flex flex-col md:flex-row justify-center items-center gap-8">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 0.5, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="glass border-dashed border-2 px-6 sm:px-12 py-8 sm:py-10 rounded-[2rem] max-w-sm w-full space-y-4 relative overflow-hidden"
+          <div
+            className="glass border-dashed border-2 px-6 sm:px-12 py-8 sm:py-10 rounded-[2rem] max-w-sm w-full space-y-4 relative overflow-hidden opacity-50"
           >
             <span className="material-symbols-outlined text-textSecondary/20 text-4xl block">format_quote</span>
             <p className="italic text-lg text-textSecondary/30">{lang === "ar" ? "قريباً — Coming Soon" : "Coming Soon"}</p>
@@ -41,14 +36,10 @@ export default function Testimonials() {
               <div className="w-9 h-9 rounded-full bg-white/5 border border-borderColor flex-shrink-0"></div>
               <div className="w-24 h-4 bg-white/5 rounded-full"></div>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 0.5, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="glass border-dashed border-2 px-12 py-10 rounded-[2rem] max-w-sm w-full space-y-4 relative overflow-hidden hidden md:block"
+          <div
+            className="glass border-dashed border-2 px-12 py-10 rounded-[2rem] max-w-sm w-full space-y-4 relative overflow-hidden hidden md:block opacity-50"
           >
             <span className="material-symbols-outlined text-textSecondary/20 text-4xl block">format_quote</span>
             <p className="italic text-lg text-textSecondary/30">{lang === "ar" ? "قريباً — Coming Soon" : "Coming Soon"}</p>
@@ -61,7 +52,7 @@ export default function Testimonials() {
               <div className="w-9 h-9 rounded-full bg-white/5 border border-borderColor flex-shrink-0"></div>
               <div className="w-20 h-4 bg-white/5 rounded-full"></div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

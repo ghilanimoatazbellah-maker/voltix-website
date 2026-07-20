@@ -8,17 +8,17 @@ const containerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.07,
     },
   },
 } as const;
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   visible: { 
     opacity: 1, 
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" as const }
+    transition: { duration: 0.4, ease: "easeOut" as const }
   },
 } as const;
 
@@ -105,14 +105,17 @@ export default function Portfolio() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-60px" }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {projects.map((project, idx) => (
-            <motion.div 
+            <motion.a 
               key={idx}
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
               variants={cardVariants}
-              className={`glass rounded-[2rem] overflow-hidden flex flex-col group border transition-all duration-300 hover:translate-y-[-6px] hover:shadow-[0_15px_35px_rgba(0,86,246,0.15)] ${project.borderColor}`}
+              className={`glass rounded-[2rem] overflow-hidden flex flex-col group border transition-all duration-300 hover:translate-y-[-6px] hover:shadow-[0_15px_35px_rgba(0,86,246,0.15)] cursor-pointer ${project.borderColor}`}
             >
               {/* Image Showcase */}
               <div className="relative h-56 sm:h-72 w-full overflow-hidden bg-surface">
@@ -120,9 +123,10 @@ export default function Portfolio() {
                   src={project.img} 
                   alt={project.title}
                   fill
-                  sizes="(max-w-768px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  priority={idx < 3}
+                  priority={idx === 0}
+                  loading={idx === 0 ? undefined : "lazy"}
                 />
                 {/* Subtle overlay that fades out completely on hover to ensure maximum clarity */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-40 group-hover:opacity-0 transition-opacity duration-300"></div>
@@ -144,17 +148,14 @@ export default function Portfolio() {
                   </p>
                 </div>
 
-                <a 
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <div 
                   className="w-full py-3.5 glass border border-borderColor rounded-xl font-bold text-center text-sm flex items-center justify-center gap-2 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300"
                 >
                   <span>{t("portfolio.view")}</span>
                   <span className="material-symbols-outlined text-sm font-bold transition-transform group-hover:translate-x-[-2px] rtl-flip">arrow_forward</span>
-                </a>
+                </div>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </motion.div>
       </div>
